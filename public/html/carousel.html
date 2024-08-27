@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        :root {
+            background: none;
+        }
+
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            background: var(--light-brown);
+            overflow-x: hidden;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-full-mobile {
+            position: relative;
+            margin: 50px auto;
+            padding-bottom: 50px;
+        }
+
+        .swiper-full-mobile::before {
+            content: "";
+            width: 265px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 565px;
+            z-index: 2;
+            margin: auto;
+        }
+
+        .swiper-full-mobile .swiper-slide {
+            height: 100%;
+        }
+
+        .swiper-full-mobile .swiper-slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .swiper-slide.swiper-slide-active img {
+            border-radius: 0;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #000000;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #000000
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="swiper-container swiper-full-mobile">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/free-photo/female-african-american-speaker-giving-presentation-hall-university-workshop_155003-3578.jpg?t=st=1723543115~exp=1723546715~hmac=69768c33c5c6fcab7757acff7ffdab17113bf3ea69d6a270dc8b9a29c97d99b4&w=360"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/premium-photo/group-people-sit-around-table-with-book_1142157-36412.jpg?w=740"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/free-photo/instructor-helping-trainee-with-project_74855-2021.jpg?t=st=1723542457~exp=1723546057~hmac=f240521189b9fda075e8be2add5078bb645cf9c748546ab5877507c807c6e609&w=996"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/free-photo/using-laptop-group-people-business-conference-modern-classroom-daytime_146671-16285.jpg?t=st=1723542183~exp=1723545783~hmac=59833177bf76e0128fe505a4a7c830c435e52520301a9bd14c230f9871986015&w=996"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/premium-photo/group-people-are-sitting-around-table-with-white-board-that-says-word-it_1115474-136936.jpg?w=740"
+                        alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://img.freepik.com/premium-photo/students-attending-guest-lecture_1237301-93854.jpg?w=996"
+                        alt="">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiperMobile = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 0,
+            slideToClickedSlide: true,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            effect: "coverflow",
+            grabCursor: true,
+            coverflowEffect: {
+                rotate: -10,
+                stretch: 10,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                320: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
